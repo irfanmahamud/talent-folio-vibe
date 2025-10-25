@@ -13,6 +13,9 @@ import Services from "./pages/Services";
 import SuccessStories from "./pages/SuccessStories";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Licenses from "./pages/Licenses";
+import JobOpenings from "./pages/JobOpenings";
+import Countries from "./pages/Countries";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +35,9 @@ const App = () => (
               <Route path="/team" element={<Team />} />
               <Route path="/services" element={<Services />} />
               <Route path="/success-stories" element={<SuccessStories />} />
+              <Route path="/licenses" element={<Licenses />} />
+              <Route path="/job-openings" element={<JobOpenings />} />
+              <Route path="/countries" element={<Countries />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
