@@ -9,7 +9,7 @@ const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { to: "/", label: "Home" },
+    // { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/leadership", label: "Leadership" },
     { to: "/team", label: "Team" },

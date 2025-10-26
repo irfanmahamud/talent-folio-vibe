@@ -10,15 +10,18 @@ import gallery6 from "@/assets/gallery-6.jpg";
 import gallery7 from "@/assets/gallery-7.jpg";
 import gallery8 from "@/assets/gallery-8.jpg";
 
+import gallary9 from "@/assets/gallary/gallary-9.jpeg";
+import gallary10 from "@/assets/gallary/gallary-10.jpeg";
+import gallary11 from "@/assets/gallary/gallary-11.jpeg";
+import gallary12 from "@/assets/gallary/gallary-12.jpeg";
+import gallary13 from "@/assets/gallary/gallary-13.jpeg";
+import gallary14 from "@/assets/gallary/gallary-14.jpeg";
+
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryItems = [
-    {
-      src: gallery1,
-      title: "Iraq Labor Market Coverage",
-      category: "Media Coverage",
-    },
     {
       src: gallery2,
       title: "AL-ROTAN Office Interior",
@@ -46,7 +49,7 @@ const Gallery = () => {
     },
     {
       src: gallery7,
-      title: "Media Interview",
+      title: "Leadership Interview",
       category: "Media Coverage",
     },
     {
@@ -54,6 +57,36 @@ const Gallery = () => {
       title: "Leadership Interview",
       category: "Media Coverage",
     },
+    {
+      src: gallary9,
+      title: "Leadership Interview",
+      category: "Media Coverage",
+    },
+    {
+      src: gallary10,
+      title: "Iraq Labor Market Coverage",
+      category: "Media Coverage",
+    },
+    {
+      src: gallary11,
+      title: "Leadership Interview",
+      category: "Media Coverage",
+    },
+    {
+      src: gallary12,
+      title: "Iraq Labor Market Coverage",
+      category: "Media Coverage",
+    },
+    {
+      src: gallary13,
+      title: "Successful Deployment Ceremony",
+      category: "Events",
+    },
+    {
+      src: gallary14,
+      title: "Successful Deployment Ceremony",
+      category: "Events",
+    }
   ];
 
   return (
