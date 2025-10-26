@@ -17,6 +17,7 @@ const Header = () => {
     { to: "/licenses", label: "Licenses" },
     { to: "/job-openings", label: "Job Openings" },
     { to: "/countries", label: "Countries" },
+    { to: "/gallery", label: "Gallery" },
     { to: "/contact", label: "Contact" },
   ];
 

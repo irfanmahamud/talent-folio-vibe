@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound";
 import Licenses from "./pages/Licenses";
 import JobOpenings from "./pages/JobOpenings";
 import Countries from "./pages/Countries";
+import Gallery from "./pages/Gallery";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/licenses" element={<Licenses />} />
               <Route path="/job-openings" element={<JobOpenings />} />
               <Route path="/countries" element={<Countries />} />
+              <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
