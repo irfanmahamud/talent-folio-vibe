@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
+import logo from "@/assets/logo-al-rotan.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,9 +11,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-xl shadow-medium">
-                AR
-              </div>
+              <img 
+                src={logo} 
+                alt="AL-ROTAN Logo" 
+                className="w-12 h-12 rounded-full shadow-medium"
+              />
               <div>
                 <div className="font-bold text-lg">AL-ROTAN</div>
                 <div className="text-xs text-muted-foreground">License No. RL-1831</div>

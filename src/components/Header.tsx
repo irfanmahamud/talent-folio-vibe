@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo-al-rotan.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,9 +29,11 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-xl shadow-medium transition-all group-hover:scale-105">
-              AR
-            </div>
+            <img 
+              src={logo} 
+              alt="AL-ROTAN Logo" 
+              className="w-12 h-12 rounded-full shadow-medium transition-all group-hover:scale-105"
+            />
             <div className="hidden md:block">
               <div className="font-bold text-xl text-foreground">AL-ROTAN</div>
               <div className="text-xs text-muted-foreground">Global Recruitment Partner</div>
