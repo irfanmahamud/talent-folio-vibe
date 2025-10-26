@@ -1,0 +1,45 @@
+{
+  "header": {
+    "tagline": "شريك التوظيف العالمي",
+    "getStarted": "ابدأ الآن",
+    "about": "من نحن",
+    "leadership": "القيادة",
+    "team": "الفريق",
+    "services": "الخدمات",
+    "successStories": "قصص النجاح",
+    "licenses": "التراخيص",
+    "jobOpenings": "فرص العمل",
+    "countries": "الدول",
+    "gallery": "المعرض",
+    "contact": "اتصل بنا"
+  },
+  "footer": {
+    "description": "وكالة توظيف معتمدة من الحكومة تربط المواهب البنغلاديشية بالفرص العالمية.",
+    "quickLinks": "روابط سريعة",
+    "contactInfo": "معلومات الاتصال",
+    "workingHours": "ساعات العمل",
+    "address": "منزل #6، طريق #02، كتلة #L، باناني، دكا-1213، بنغلاديش",
+    "phone": "+8801714-465613",
+    "email": "alrotanbd2019@gmail.com",
+    "website": "www.al-rotan.com",
+    "sunToThu": "الأحد - الخميس",
+    "timeRange": "9:00 صباحاً - 6:00 مساءً",
+    "friToSat": "الجمعة - السبت",
+    "closed": "مغلق",
+    "copyright": "AL-ROTAN (Pvt.) المحدودة. جميع الحقوق محفوظة. | رقم الترخيص RL-1831",
+    "switchLanguage": "English"
+  },
+  "home": {
+    "heroTitle": "ربط المواهب البنغلاديشية بالفرص العالمية",
+    "heroDescription": "وكالة توظيف مرخصة متخصصة في التوظيف في الخارج عبر الشرق الأوسط وجنوب شرق آسيا وما بعدها.",
+    "exploreServices": "استكشف الخدمات",
+    "learnMore": "اعرف المزيد"
+  },
+  "common": {
+    "readMore": "اقرأ المزيد",
+    "contactUs": "اتصل بنا",
+    "viewAll": "عرض الكل",
+    "apply": "قدم الآن",
+    "back": "رجوع"
+  }
+}

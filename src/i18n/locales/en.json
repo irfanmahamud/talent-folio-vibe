@@ -1,0 +1,45 @@
+{
+  "header": {
+    "tagline": "Global Recruitment Partner",
+    "getStarted": "Get Started",
+    "about": "About",
+    "leadership": "Leadership",
+    "team": "Team",
+    "services": "Services",
+    "successStories": "Success Stories",
+    "licenses": "Licenses",
+    "jobOpenings": "Job Openings",
+    "countries": "Countries",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "footer": {
+    "description": "Government-approved recruiting agency connecting Bangladeshi talent with global opportunities.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "workingHours": "Working Hours",
+    "address": "House #6, Road #02, Block #L, Banani, Dhaka-1213, Bangladesh",
+    "phone": "+8801714-465613",
+    "email": "alrotanbd2019@gmail.com",
+    "website": "www.al-rotan.com",
+    "sunToThu": "Sunday - Thursday",
+    "timeRange": "9:00 AM - 6:00 PM",
+    "friToSat": "Friday - Saturday",
+    "closed": "Closed",
+    "copyright": "AL-ROTAN (Pvt.) Limited. All rights reserved. | License No. RL-1831",
+    "switchLanguage": "العربية"
+  },
+  "home": {
+    "heroTitle": "Connecting Bangladesh Talent with Global Opportunities",
+    "heroDescription": "Licensed recruitment agency specializing in overseas employment across Middle East, Southeast Asia, and beyond.",
+    "exploreServices": "Explore Services",
+    "learnMore": "Learn More"
+  },
+  "common": {
+    "readMore": "Read More",
+    "contactUs": "Contact Us",
+    "viewAll": "View All",
+    "apply": "Apply Now",
+    "back": "Back"
+  }
+}

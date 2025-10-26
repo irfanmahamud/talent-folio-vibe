@@ -1,25 +1,26 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-al-rotan.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   const navLinks = [
-    // { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/leadership", label: "Leadership" },
-    { to: "/team", label: "Team" },
-    { to: "/services", label: "Services" },
-    { to: "/success-stories", label: "Success Stories" },
-    { to: "/licenses", label: "Licenses" },
-    { to: "/job-openings", label: "Job Openings" },
-    { to: "/countries", label: "Countries" },
-    { to: "/gallery", label: "Gallery" },
-    { to: "/contact", label: "Contact" },
+    { to: "/about", label: t("header.about") },
+    { to: "/leadership", label: t("header.leadership") },
+    { to: "/team", label: t("header.team") },
+    { to: "/services", label: t("header.services") },
+    { to: "/success-stories", label: t("header.successStories") },
+    { to: "/licenses", label: t("header.licenses") },
+    { to: "/job-openings", label: t("header.jobOpenings") },
+    { to: "/countries", label: t("header.countries") },
+    { to: "/gallery", label: t("header.gallery") },
+    { to: "/contact", label: t("header.contact") },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -36,7 +37,7 @@ const Header = () => {
             />
             <div className="hidden md:block">
               <div className="font-bold text-xl text-foreground">AL-ROTAN</div>
-              <div className="text-xs text-muted-foreground">Global Recruitment Partner</div>
+              <div className="text-xs text-muted-foreground">{t("header.tagline")}</div>
             </div>
           </Link>
 
@@ -58,7 +59,7 @@ const Header = () => {
 
           <div className="hidden lg:flex items-center space-x-4">
             <Button variant="default" size="lg" asChild className="shadow-medium">
-              <Link to="/contact">Get Started</Link>
+              <Link to="/contact">{t("header.getStarted")}</Link>
             </Button>
           </div>
 
@@ -91,7 +92,7 @@ const Header = () => {
             ))}
             <Button variant="default" size="lg" asChild className="w-full mt-4">
               <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                Get Started
+                {t("header.getStarted")}
               </Link>
             </Button>
           </nav>
