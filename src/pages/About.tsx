@@ -1,15 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Award, MapPin } from "lucide-react";
 import aboutImage from "@/assets/about-image.jpg";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
+  
   const bangladeshInfo = [
-    { label: "Capital", value: "Dhaka" },
-    { label: "Population", value: "170+ Million" },
-    { label: "Area", value: "148,460 sq. km" },
-    { label: "Independence", value: "26 March 1971" },
-    { label: "Language", value: "Bengali" },
-    { label: "Currency", value: "Taka (BDT)" },
+    { label: t('about.bangladesh.capital'), value: "Dhaka" },
+    { label: t('about.bangladesh.population'), value: "170+ Million" },
+    { label: t('about.bangladesh.area'), value: "148,460 sq. km" },
+    { label: t('about.bangladesh.independence'), value: "26 March 1971" },
+    { label: t('about.bangladesh.language'), value: "Bengali" },
+    { label: t('about.bangladesh.currency'), value: "Taka (BDT)" },
   ];
 
   return (
@@ -18,9 +21,9 @@ const About = () => {
       <section className="py-20 bg-gradient-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About AL-ROTAN</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('about.hero.title')}</h1>
             <p className="text-xl text-gray-100">
-              Building bridges between Bangladeshi talent and global opportunities since 2021
+              {t('about.hero.subtitle')}
             </p>
           </div>
         </div>
@@ -35,28 +38,22 @@ const About = () => {
                 <Award className="h-5 w-5 text-primary" />
                 <span className="text-sm font-medium text-primary">License No. RL-1831</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Who We Are</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('about.overview.title')}</h2>
               <p className="text-muted-foreground text-lg mb-6">
-                AL-ROTAN (Pvt.) Limited is a government-approved recruiting agency in Bangladesh, officially licensed
-                under the Ministry of Expatriates' Welfare and Overseas Employment on February 4, 2024 (License No.
-                RL-1831).
+                {t('about.overview.paragraph1')}
               </p>
               <p className="text-muted-foreground text-lg mb-6">
-                Since our inception, AL-ROTAN has earned a solid reputation for supplying skilled, semi-skilled, and
-                unskilled manpower to various sectors including construction, manufacturing, agriculture, hospitality,
-                and tourism across the Middle East, Gulf States, South East Asia, and beyond.
+                {t('about.overview.paragraph2')}
               </p>
               <p className="text-muted-foreground text-lg">
-                With a strong commitment to professionalism, transparency, and ethical recruitment practices, AL-ROTAN
-                strives to bridge the gap between global employers and the talented Bangladeshi workforce, ensuring
-                mutual growth and success.
+                {t('about.overview.paragraph3')}
               </p>
             </div>
 
             <div className="animate-slide-in-right">
               <img
                 src={aboutImage}
-                alt="AL-ROTAN Team"
+                alt={t('about.overview.imageAlt')}
                 className="rounded-2xl shadow-strong w-full object-cover h-[500px]"
               />
             </div>
@@ -73,11 +70,9 @@ const About = () => {
                 <div className="w-14 h-14 rounded-lg bg-gradient-primary flex items-center justify-center mb-6">
                   <Target className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('about.mission.title')}</h3>
                 <p className="text-muted-foreground text-lg">
-                  To provide reliable, efficient, and ethical manpower recruitment services by connecting Bangladeshi
-                  job seekers with reputable international employers, ensuring fair employment opportunities, worker
-                  welfare, and client satisfaction through continuous improvement and innovation.
+                  {t('about.mission.description')}
                 </p>
               </CardContent>
             </Card>
@@ -90,11 +85,9 @@ const About = () => {
                 <div className="w-14 h-14 rounded-lg bg-gradient-accent flex items-center justify-center mb-6">
                   <Eye className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('about.vision.title')}</h3>
                 <p className="text-muted-foreground text-lg">
-                  To become one of Bangladesh's leading and most trusted global recruitment agencies, recognized for
-                  excellence, integrity, and social responsibility in building sustainable international employment
-                  partnerships that contribute to national economic development.
+                  {t('about.vision.description')}
                 </p>
               </CardContent>
             </Card>
@@ -109,11 +102,11 @@ const About = () => {
             <div className="text-center mb-12 animate-fade-in">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full mb-6">
                 <MapPin className="h-5 w-5 text-secondary" />
-                <span className="text-sm font-medium text-secondary">Our Homeland</span>
+                <span className="text-sm font-medium text-secondary">{t('about.bangladesh.badge')}</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">About Bangladesh</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('about.bangladesh.title')}</h2>
               <p className="text-muted-foreground text-lg">
-                People's Republic of Bangladesh - A nation of resilience, culture, and skilled workforce
+                {t('about.bangladesh.subtitle')}
               </p>
             </div>
 
@@ -134,17 +127,12 @@ const About = () => {
 
             <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
               <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-4">Why Bangladeshi Workers?</h3>
+                <h3 className="text-xl font-bold mb-4">{t('about.bangladesh.whyTitle')}</h3>
                 <p className="text-muted-foreground mb-4">
-                  Bangladeshi workers are widely recognized for their hard work, dedication, and adaptability in diverse
-                  working environments. They possess a natural ability to learn quickly, follow instructions, and
-                  maintain discipline, making them valuable assets to any organization.
+                  {t('about.bangladesh.whyParagraph1')}
                 </p>
                 <p className="text-muted-foreground">
-                  With a strong foundation in technical and vocational skills, coupled with a positive work ethic and
-                  cost-effectiveness, Bangladeshi manpower offers excellent productivity and reliability. The Government
-                  of Bangladesh ensures strict compliance with international labor standards and ethical recruitment
-                  practices.
+                  {t('about.bangladesh.whyParagraph2')}
                 </p>
               </CardContent>
             </Card>
