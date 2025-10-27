@@ -7,12 +7,12 @@ const About = () => {
   const { t } = useTranslation();
   
   const bangladeshInfo = [
-    { label: t('about.bangladesh.capital'), value: "Dhaka" },
-    { label: t('about.bangladesh.population'), value: "170+ Million" },
-    { label: t('about.bangladesh.area'), value: "148,460 sq. km" },
-    { label: t('about.bangladesh.independence'), value: "26 March 1971" },
-    { label: t('about.bangladesh.language'), value: "Bengali" },
-    { label: t('about.bangladesh.currency'), value: "Taka (BDT)" },
+    { label: t('about.capital'), value: t('about.dhaka') },
+    { label: t('about.population'), value: t('about.populationValue') },
+    { label: t('about.area'), value: t('about.areaValue') },
+    { label: t('about.independence'), value: t('about.independenceDate') },
+    { label: t('about.language'), value: t('about.bengali') },
+    { label: t('about.currency'), value: t('about.taka') },
   ];
 
   return (
@@ -21,9 +21,9 @@ const About = () => {
       <section className="py-20 bg-gradient-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('about.hero.title')}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('about.title')}</h1>
             <p className="text-xl text-gray-100">
-              {t('about.hero.subtitle')}
+              {t('about.subtitle')}
             </p>
           </div>
         </div>
@@ -38,22 +38,22 @@ const About = () => {
                 <Award className="h-5 w-5 text-primary" />
                 <span className="text-sm font-medium text-primary">License No. RL-1831</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('about.overview.title')}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('about.whoWeAre')}</h2>
               <p className="text-muted-foreground text-lg mb-6">
-                {t('about.overview.paragraph1')}
+                {t('about.whoWeAreDesc1')}
               </p>
               <p className="text-muted-foreground text-lg mb-6">
-                {t('about.overview.paragraph2')}
+                {t('about.whoWeAreDesc2')}
               </p>
               <p className="text-muted-foreground text-lg">
-                {t('about.overview.paragraph3')}
+                {t('about.whoWeAreDesc3')}
               </p>
             </div>
 
             <div className="animate-slide-in-right">
               <img
                 src={aboutImage}
-                alt={t('about.overview.imageAlt')}
+                alt={t('about.ourHomeland')}
                 className="rounded-2xl shadow-strong w-full object-cover h-[500px]"
               />
             </div>
@@ -70,9 +70,9 @@ const About = () => {
                 <div className="w-14 h-14 rounded-lg bg-gradient-primary flex items-center justify-center mb-6">
                   <Target className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{t('about.mission.title')}</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('about.ourMission')}</h3>
                 <p className="text-muted-foreground text-lg">
-                  {t('about.mission.description')}
+                  {t('about.missionDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -85,9 +85,9 @@ const About = () => {
                 <div className="w-14 h-14 rounded-lg bg-gradient-accent flex items-center justify-center mb-6">
                   <Eye className="h-7 w-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{t('about.vision.title')}</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('about.ourVision')}</h3>
                 <p className="text-muted-foreground text-lg">
-                  {t('about.vision.description')}
+                  {t('about.visionDesc')}
                 </p>
               </CardContent>
             </Card>
@@ -102,11 +102,11 @@ const About = () => {
             <div className="text-center mb-12 animate-fade-in">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full mb-6">
                 <MapPin className="h-5 w-5 text-secondary" />
-                <span className="text-sm font-medium text-secondary">{t('about.bangladesh.badge')}</span>
+                <span className="text-sm font-medium text-secondary">{t('about.ourHomeland')}</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('about.bangladesh.title')}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('about.aboutBangladesh')}</h2>
               <p className="text-muted-foreground text-lg">
-                {t('about.bangladesh.subtitle')}
+                {t('about.bangladeshSubtitle')}
               </p>
             </div>
 
@@ -127,12 +127,12 @@ const About = () => {
 
             <Card className="bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
               <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-4">{t('about.bangladesh.whyTitle')}</h3>
+                <h3 className="text-xl font-bold mb-4">{t('about.whyBangladeshi')}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t('about.bangladesh.whyParagraph1')}
+                  {t('about.whyBangladeshiDesc1')}
                 </p>
                 <p className="text-muted-foreground">
-                  {t('about.bangladesh.whyParagraph2')}
+                  {t('about.whyBangladeshiDesc2')}
                 </p>
               </CardContent>
             </Card>
