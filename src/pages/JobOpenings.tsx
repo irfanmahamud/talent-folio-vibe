@@ -3,13 +3,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const JobOpenings = () => {
+  const { t } = useTranslation();
+  
   const jobs = [
     {
       title: "Cleaner",
       company: "ARTOSH COMPANY",
-      country: "Iraq (KRO)",
+      country: t('countries.iraq'),
       location: "Kurdistan Region",
       positions: 100,
       salary: "300 USD",
@@ -26,7 +29,7 @@ const JobOpenings = () => {
     {
       title: "Car Driver",
       company: "Burj Al Khaleej General Co",
-      country: "Iraq",
+      country: t('countries.iraq'),
       location: "Al Mansour, Baghdad",
       positions: 59,
       salary: "Competitive",
@@ -58,7 +61,7 @@ const JobOpenings = () => {
     {
       title: "Factory Workers",
       company: "Manufacturing Companies",
-      country: "Malaysia",
+      country: t('countries.malaysia'),
       location: "Kuala Lumpur",
       positions: 30,
       salary: "350-450 USD",
@@ -79,9 +82,9 @@ const JobOpenings = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <Briefcase className="w-16 h-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">Current Job Openings</h1>
+            <h1 className="text-5xl font-bold mb-6">{t('jobs.title')}</h1>
             <p className="text-xl text-white/90">
-              Explore international career opportunities with competitive benefits
+              {t('jobs.subtitle')}
             </p>
           </div>
         </div>
@@ -97,7 +100,7 @@ const JobOpenings = () => {
                     <div className="flex items-start justify-between mb-4">
                       <Badge className="bg-primary text-primary-foreground">
                         <Users className="w-3 h-3 mr-1" />
-                        {job.positions} Positions
+                        {job.positions} {t('jobs.positions')}
                       </Badge>
                       <Badge variant="outline">{job.country}</Badge>
                     </div>
@@ -114,20 +117,20 @@ const JobOpenings = () => {
                       </div>
                       <div className="flex items-center space-x-2 text-sm">
                         <DollarSign className="w-4 h-4 text-primary" />
-                        <span>{job.salary}/month</span>
+                        <span>{job.salary}{t('jobs.month')}</span>
                       </div>
                       <div className="flex items-center space-x-2 text-sm">
                         <Calendar className="w-4 h-4 text-primary" />
-                        <span>Contract: {job.period}</span>
+                        <span>{t('jobs.contract')} {job.period}</span>
                       </div>
                       <div className="flex items-center space-x-2 text-sm">
                         <Clock className="w-4 h-4 text-primary" />
-                        <span>Full Time</span>
+                        <span>{t('jobs.fullTime')}</span>
                       </div>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-2 text-sm">Benefits Package:</h4>
+                      <h4 className="font-semibold mb-2 text-sm">{t('jobs.benefitsPackage')}</h4>
                       <ul className="space-y-1">
                         {job.benefits.map((benefit, idx) => (
                           <li key={idx} className="text-sm text-muted-foreground flex items-start">
@@ -139,7 +142,7 @@ const JobOpenings = () => {
                     </div>
 
                     <Button className="w-full" asChild>
-                      <Link to="/contact">Apply Now</Link>
+                      <Link to="/contact">{t('jobs.applyNow')}</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -148,16 +151,16 @@ const JobOpenings = () => {
 
             <Card className="mt-12 bg-gradient-primary text-white">
               <CardHeader>
-                <CardTitle className="text-2xl">General Terms & Conditions</CardTitle>
+                <CardTitle className="text-2xl">{t('jobs.generalTerms')}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
-                <p>• Probationary Period: 90 days for most positions</p>
-                <p>• Contract Duration: Typically 2 years (renewable)</p>
-                <p>• Overtime: As per international labor law</p>
-                <p>• Medical Treatment: Free basic medical care provided by employer</p>
-                <p>• Working Hours: 8 hours/day, 48 hours/week (standard)</p>
-                <p>• Weekly Holiday: Usually Friday (may vary by country)</p>
-                <p>• Processing Time: 60-90 days from application to deployment</p>
+                <p>• {t('jobs.probation')}</p>
+                <p>• {t('jobs.contractDuration')}</p>
+                <p>• {t('jobs.overtime')}</p>
+                <p>• {t('jobs.medicalTreatment')}</p>
+                <p>• {t('jobs.workingHours')}</p>
+                <p>• {t('jobs.weeklyHoliday')}</p>
+                <p>• {t('jobs.processingTime')}</p>
               </CardContent>
             </Card>
           </div>

@@ -6,8 +6,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Globe, Clock, Send } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,7 +26,7 @@ const Contact = () => {
 
     // Simulate form submission
     setTimeout(() => {
-      toast.success("Message sent successfully! We'll get back to you soon.");
+      toast.success(t('contact.messageSent'));
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
       setIsSubmitting(false);
     }, 1000);
@@ -40,24 +42,32 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Office Address",
-      details: ["House #6, Road #02, Block #L", "Banani, Dhaka-1213", "Bangladesh"],
+      title: t('contact.officeAddress'),
+      details: [t('footer.address')],
     },
     {
       icon: Phone,
-      title: "Phone Numbers",
+      title: t('contact.phoneNumbers'),
       details: ["+8801714-465613", "+8801725-294060", "+964 782 714 1813"],
     },
     {
       icon: Mail,
-      title: "Email Address",
-      details: ["alrotanbd2019@gmail.com"],
+      title: t('contact.emailAddress'),
+      details: [t('footer.email')],
     },
     {
       icon: Globe,
-      title: "Website",
-      details: ["www.al-rotan.com"],
+      title: t('contact.website'),
+      details: [t('footer.website')],
     },
+  ];
+
+  const whyContactReasons = [
+    t('contact.reason1'),
+    t('contact.reason2'),
+    t('contact.reason3'),
+    t('contact.reason4'),
+    t('contact.reason5'),
   ];
 
   return (
@@ -66,9 +76,9 @@ const Contact = () => {
       <section className="py-20 bg-gradient-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('contact.title')}</h1>
             <p className="text-xl text-gray-100">
-              Get in touch with AL-ROTAN - We're here to help you with all your recruitment needs
+              {t('contact.subtitle')}
             </p>
           </div>
         </div>
@@ -109,27 +119,27 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
             <div className="animate-slide-in-left">
-              <h2 className="text-3xl font-bold mb-6">Send us a Message</h2>
+              <h2 className="text-3xl font-bold mb-6">{t('contact.sendMessage')}</h2>
               <p className="text-muted-foreground mb-8">
-                Fill out the form below and we'll get back to you as soon as possible
+                {t('contact.sendMessageDesc')}
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <Label htmlFor="name">Full Name *</Label>
+                  <Label htmlFor="name">{t('contact.fullName')} *</Label>
                   <Input
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Enter your full name"
+                    placeholder={t('contact.enterFullName')}
                     className="mt-2"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="email">Email Address *</Label>
+                  <Label htmlFor="email">{t('header.contact')} *</Label>
                   <Input
                     id="email"
                     name="email"
@@ -137,53 +147,53 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="your.email@example.com"
+                    placeholder={t('contact.enterEmail')}
                     className="mt-2"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="phone">Phone Number</Label>
+                  <Label htmlFor="phone">{t('contact.phoneNumber')}</Label>
                   <Input
                     id="phone"
                     name="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+880 XXX XXX XXXX"
+                    placeholder={t('contact.phonePlaceholder')}
                     className="mt-2"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="subject">Subject *</Label>
+                  <Label htmlFor="subject">{t('contact.subject')} *</Label>
                   <Input
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    placeholder="What is this regarding?"
+                    placeholder={t('contact.subjectPlaceholder')}
                     className="mt-2"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="message">Message *</Label>
+                  <Label htmlFor="message">{t('contact.message')} *</Label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    placeholder="Tell us more about your inquiry..."
+                    placeholder={t('contact.messagePlaceholder')}
                     rows={6}
                     className="mt-2"
                   />
                 </div>
 
                 <Button type="submit" size="lg" className="w-full shadow-medium" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? t('contact.sending') : t('contact.sendMessage2')}
                   <Send className="ml-2 h-5 w-5" />
                 </Button>
               </form>
@@ -195,16 +205,16 @@ const Contact = () => {
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <Clock className="h-6 w-6 text-primary" />
-                    <h3 className="text-xl font-bold">Working Hours</h3>
+                    <h3 className="text-xl font-bold">{t('contact.workingHours')}</h3>
                   </div>
                   <div className="space-y-4">
                     <div className="flex justify-between items-center pb-3 border-b border-border">
-                      <span className="text-muted-foreground">Sunday - Thursday</span>
-                      <span className="font-semibold">9:00 AM - 6:00 PM</span>
+                      <span className="text-muted-foreground">{t('contact.sundayThursday')}</span>
+                      <span className="font-semibold">{t('footer.timeRange')}</span>
                     </div>
                     <div className="flex justify-between items-center pb-3 border-b border-border">
-                      <span className="text-muted-foreground">Friday - Saturday</span>
-                      <span className="font-semibold text-destructive">Closed</span>
+                      <span className="text-muted-foreground">{t('contact.fridaySaturday')}</span>
+                      <span className="font-semibold text-destructive">{t('footer.closed')}</span>
                     </div>
                   </div>
                 </CardContent>
@@ -212,15 +222,9 @@ const Contact = () => {
 
               <Card className="border-accent/20">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-bold mb-4">Why Contact Us?</h3>
+                  <h3 className="text-xl font-bold mb-4">{t('contact.whyContactUs')}</h3>
                   <ul className="space-y-3">
-                    {[
-                      "Explore employment opportunities abroad",
-                      "Learn about our recruitment process",
-                      "Partner with us as an employer",
-                      "Get support for deployed workers",
-                      "General inquiries about our services",
-                    ].map((item, index) => (
+                    {whyContactReasons.map((item, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
                         <span className="text-muted-foreground">{item}</span>
@@ -234,8 +238,7 @@ const Contact = () => {
                 <CardContent className="p-8 text-center">
                   <h3 className="text-xl font-bold mb-3">License No. RL-1831</h3>
                   <p className="text-sm text-gray-100">
-                    Government-approved recruiting agency by the Ministry of Expatriates' Welfare and Overseas
-                    Employment, Bangladesh
+                    {t('contact.licenseInfo')}
                   </p>
                 </CardContent>
               </Card>
@@ -249,17 +252,17 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">Visit Our Office</h2>
+              <h2 className="text-3xl font-bold mb-4">{t('contact.visitOffice')}</h2>
               <p className="text-muted-foreground">
-                We welcome you to visit our office in Banani, Dhaka during working hours
+                {t('contact.visitOfficeDesc')}
               </p>
             </div>
             <Card className="overflow-hidden">
               <div className="aspect-video bg-muted flex items-center justify-center">
                 <div className="text-center p-8">
                   <MapPin className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-lg font-semibold mb-2">House #6, Road #02, Block #L</p>
-                  <p className="text-muted-foreground">Banani, Dhaka-1213, Bangladesh</p>
+                  <p className="text-lg font-semibold mb-2">{t('footer.address').split(',')[0]}</p>
+                  <p className="text-muted-foreground">{t('footer.address').split(',').slice(1).join(',')}</p>
                 </div>
               </div>
             </Card>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -19,73 +20,74 @@ import gallary14 from "@/assets/gallary/gallary-14.jpeg";
 
 
 const Gallery = () => {
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryItems = [
     {
       src: gallery2,
-      title: "AL-ROTAN Office Interior",
-      category: "Office",
+      title: t('gallery.officeInterior'),
+      category: t('gallery.office'),
     },
     {
       src: gallery3,
-      title: "Worker Deployment",
-      category: "Operations",
+      title: t('gallery.workerDeployment'),
+      category: t('gallery.operations'),
     },
     {
       src: gallery4,
-      title: "Reception Area",
-      category: "Office",
+      title: t('gallery.receptionArea'),
+      category: t('gallery.office'),
     },
     {
       src: gallery5,
-      title: "Successful Deployment Ceremony",
-      category: "Events",
+      title: t('gallery.deploymentCeremony'),
+      category: t('gallery.events'),
     },
     {
       src: gallery6,
-      title: "Document Processing",
-      category: "Operations",
+      title: t('gallery.documentProcessing'),
+      category: t('gallery.operations'),
     },
     {
       src: gallery7,
-      title: "Leadership Interview",
-      category: "Media Coverage",
+      title: t('gallery.leadershipInterview'),
+      category: t('gallery.mediaCoverage'),
     },
     {
       src: gallery8,
-      title: "Leadership Interview",
-      category: "Media Coverage",
+      title: t('gallery.leadershipInterview'),
+      category: t('gallery.mediaCoverage'),
     },
     {
       src: gallary9,
-      title: "Leadership Interview",
-      category: "Media Coverage",
+      title: t('gallery.leadershipInterview'),
+      category: t('gallery.mediaCoverage'),
     },
     {
       src: gallary10,
-      title: "Iraq Labor Market Coverage",
-      category: "Media Coverage",
+      title: t('gallery.iraqMarketCoverage'),
+      category: t('gallery.mediaCoverage'),
     },
     {
       src: gallary11,
-      title: "Leadership Interview",
-      category: "Media Coverage",
+      title: t('gallery.leadershipInterview'),
+      category: t('gallery.mediaCoverage'),
     },
     {
       src: gallary12,
-      title: "Iraq Labor Market Coverage",
-      category: "Media Coverage",
+      title: t('gallery.iraqMarketCoverage'),
+      category: t('gallery.mediaCoverage'),
     },
     {
       src: gallary13,
-      title: "Successful Deployment Ceremony",
-      category: "Events",
+      title: t('gallery.deploymentCeremony'),
+      category: t('gallery.events'),
     },
     {
       src: gallary14,
-      title: "Successful Deployment Ceremony",
-      category: "Events",
+      title: t('gallery.deploymentCeremony'),
+      category: t('gallery.events'),
     }
   ];
 
@@ -110,11 +112,10 @@ const Gallery = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-                Media Gallery
+                {t('gallery.title')}
               </h1>
               <p className="text-lg text-primary-foreground/90">
-                Explore our journey through images - from successful deployments to
-                our state-of-the-art facilities and media recognition.
+                {t('gallery.subtitle')}
               </p>
             </div>
           </div>

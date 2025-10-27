@@ -15,75 +15,70 @@ import {
   Leaf,
 } from "lucide-react";
 import servicesImage from "@/assets/services-image.jpg";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation();
+  
   const sectors = [
-    { icon: Construction, name: "Construction", description: "Skilled workers for building and infrastructure" },
-    { icon: Factory, name: "Manufacturing", description: "Production line workers and technicians" },
-    { icon: Hotel, name: "Hospitality", description: "Hotel staff, chefs, and service personnel" },
-    { icon: Leaf, name: "Agriculture", description: "Farm workers and agricultural specialists" },
-    { icon: Stethoscope, name: "Healthcare", description: "Medical staff and caregivers" },
-    { icon: Factory, name: "Industrial", description: "Factory workers and machine operators" },
+    { icon: Construction, name: t('services.construction'), description: t('services.constructionDesc') },
+    { icon: Factory, name: t('services.manufacturing'), description: t('services.manufacturingDesc') },
+    { icon: Hotel, name: t('services.hospitality'), description: t('services.hospitalityDesc') },
+    { icon: Leaf, name: t('services.agriculture'), description: t('services.agricultureDesc') },
+    { icon: Stethoscope, name: t('services.healthcare'), description: t('services.healthcareDesc') },
+    { icon: Factory, name: t('services.industrial'), description: t('services.industrialDesc') },
   ];
 
   const recruitmentSteps = [
     {
       icon: FileCheck,
-      title: "Demand Letter & Authorization",
-      description:
-        "The overseas employer sends a Demand Letter and Power of Attorney, duly attested by the Bangladesh Embassy, authorizing us to recruit workers on their behalf.",
+      title: t('services.step1Title'),
+      description: t('services.step1Desc'),
     },
     {
       icon: Shield,
-      title: "Government Approval",
-      description:
-        "We obtain permission from BMET and the Ministry of Expatriates' Welfare and Overseas Employment to commence recruitment.",
+      title: t('services.step2Title'),
+      description: t('services.step2Desc'),
     },
     {
       icon: UserCheck,
-      title: "Worker Selection",
-      description:
-        "Through fair interviews, trade tests, and verification, we select qualified candidates from our extensive database of skilled workers.",
+      title: t('services.step3Title'),
+      description: t('services.step3Desc'),
     },
     {
       icon: Stethoscope,
-      title: "Medical Examination",
-      description:
-        "Comprehensive health check-ups at government-approved centers ensure workers are physically and mentally fit for overseas employment.",
+      title: t('services.step4Title'),
+      description: t('services.step4Desc'),
     },
     {
       icon: FileText,
-      title: "Visa Processing",
-      description:
-        "Complete documentation and visa applications processed according to host country regulations with full transparency.",
+      title: t('services.step5Title'),
+      description: t('services.step5Desc'),
     },
     {
       icon: GraduationCap,
-      title: "Training & Orientation",
-      description:
-        "Pre-departure orientation covering language, culture, and job-specific skills to ensure smooth integration abroad.",
+      title: t('services.step6Title'),
+      description: t('services.step6Desc'),
     },
     {
       icon: FileCheck,
-      title: "Contract & Registration",
-      description:
-        "BMET-approved contracts outlining salary, benefits, and terms, followed by smart card issuance for legal employment.",
+      title: t('services.step7Title'),
+      description: t('services.step7Desc'),
     },
     {
       icon: Plane,
-      title: "Departure & Support",
-      description:
-        "Complete travel arrangements and ongoing support to ensure worker welfare and address any issues that arise.",
+      title: t('services.step8Title'),
+      description: t('services.step8Desc'),
     },
   ];
 
   const whyBangladeshi = [
-    "Natural ability to learn quickly and adapt",
-    "Strong work ethic and dedication",
-    "Discipline and reliability",
-    "Technical and vocational skills",
-    "Cost-effective workforce",
-    "Government compliance with international standards",
+    t('services.quickLearn'),
+    t('services.strongWorkEthic'),
+    t('services.disciplineReliability'),
+    t('services.technicalSkills'),
+    t('services.costEffective'),
+    t('services.governmentCompliance'),
   ];
 
   return (
@@ -92,9 +87,9 @@ const Services = () => {
       <section className="py-20 bg-gradient-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('services.title')}</h1>
             <p className="text-xl text-gray-100">
-              Comprehensive recruitment solutions for diverse industries across the globe
+              {t('services.subtitle')}
             </p>
           </div>
         </div>
@@ -104,9 +99,9 @@ const Services = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Sectors We Serve</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('services.sectorsWeServe')}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Providing skilled manpower across multiple industries
+              {t('services.sectorsDesc')}
             </p>
           </div>
 
@@ -134,10 +129,10 @@ const Services = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="mb-4 px-4 py-2">Transparent Process</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Recruitment Process</h2>
+            <Badge className="mb-4 px-4 py-2">{t('services.transparentProcessBadge')}</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('services.recruitmentProcess')}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              A systematic, government-approved process ensuring efficiency, compliance, and worker welfare
+              {t('services.processDesc')}
             </p>
           </div>
 
@@ -175,11 +170,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
-              <Badge className="mb-6 px-4 py-2">Workforce Excellence</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Hire Bangladeshi Workers?</h2>
+              <Badge className="mb-6 px-4 py-2">{t('services.workforceExcellence')}</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('services.whyHireBangladeshi')}</h2>
               <p className="text-muted-foreground text-lg mb-8">
-                Bangladeshi workers are widely recognized globally for their exceptional work ethic, adaptability, and
-                reliability. They bring immense value to organizations across all sectors.
+                {t('services.whyHireBangladeshiDesc')}
               </p>
 
               <div className="space-y-4">
@@ -207,7 +201,7 @@ const Services = () => {
             <div className="animate-slide-in-right">
               <img
                 src={servicesImage}
-                alt="Skilled Workers"
+                alt={t('services.workforceExcellence')}
                 className="rounded-2xl shadow-strong w-full object-cover h-[500px]"
               />
             </div>
@@ -222,18 +216,14 @@ const Services = () => {
             <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-6">
               <HeadphonesIcon className="h-8 w-8 text-white" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ongoing Support</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('services.ongoingSupport')}</h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Our commitment doesn't end at deployment. AL-ROTAN maintains continuous communication with both workers
-              and employers to ensure proper welfare, smooth job placement, and to promptly address any issues that may
-              arise abroad.
+              {t('services.ongoingSupportDesc')}
             </p>
             <Card className="bg-background/80 backdrop-blur border-primary/20">
               <CardContent className="p-8">
                 <p className="text-muted-foreground italic">
-                  "AL-ROTAN takes pride in maintaining honesty, professionalism, and responsibility at every stage of
-                  the recruitment process, contributing to Bangladesh's reputation as a trusted source of quality
-                  manpower worldwide."
+                  "{t('services.ongoingSupportQuote')}"
                 </p>
               </CardContent>
             </Card>

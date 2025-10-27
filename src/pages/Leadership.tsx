@@ -1,11 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Leadership = () => {
+  const { t } = useTranslation();
+  
   const leaders = [
     {
       name: "KAZI ATIKUR RAHMAN",
-      position: "Chairman",
+      position: t('leadership.chairman'),
       message: `Since our journey began, our goal has been to contribute meaningfully to the nation's economy by creating global employment opportunities for our skilled, semi-skilled, and unskilled workers. We believe that every Bangladeshi worker possesses immense potential, and through proper guidance, training, and ethical recruitment practices, they can become valuable assets to any organization around the world.
 
 At Al Rotan, we take pride in maintaining professionalism, transparency, and fairness in every step of the recruitment process. Our continuous growth and success reflect the trust and satisfaction of our foreign employers and the dedication of our team members who work tirelessly to uphold our reputation.
@@ -16,7 +19,7 @@ Together, we move forward — with integrity, dedication, and a shared vision fo
     },
     {
       name: "MD. KHORSHED ALAM (MOJID)",
-      position: "Managing Director",
+      position: t('leadership.managingDirector'),
       message: `It is with great pride and a deep sense of responsibility that I extend my heartfelt greetings to all our valued partners, clients, and well-wishers of Al Rotan (Pvt.) Limited. Since our establishment, our vision has been clear — to create a trusted bridge between the talented workforce of Bangladesh and global employers who seek commitment, integrity, and excellence.
 
 With the approval of the Government of the People's Republic of Bangladesh (License No. RL-1831), we have been working relentlessly to ensure ethical recruitment, transparency, and sustainable employment opportunities abroad.
@@ -27,7 +30,7 @@ Our success is built on dedication, professionalism, and the trust of our partne
     },
     {
       name: "MD. BIKO HOSSAIN",
-      position: "Overseas Director",
+      position: t('leadership.overseasDirector'),
       message: `It gives me immense pleasure to convey my warm greetings on behalf of Al Rotan (Pvt.) Limited to our valued international partners, clients, and well-wishers around the world.
 
 As the Overseas Director, my primary focus has always been to strengthen our global partnerships and ensure smooth coordination between our overseas employers and the talented Bangladeshi workforce. Through mutual trust, transparency, and continuous communication, we have been able to build a solid foundation for long-term collaboration and shared success.
@@ -46,19 +49,17 @@ We remain dedicated to expanding our global footprint, enhancing our service sta
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="py-20 bg-gradient-primary text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Leadership</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('leadership.title')}</h1>
             <p className="text-xl text-gray-100">
-              Guided by vision, driven by integrity, committed to excellence
+              {t('leadership.subtitle')}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Leadership Messages */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="space-y-16">
@@ -103,28 +104,27 @@ We remain dedicated to expanding our global footprint, enhancing our service sta
         </div>
       </section>
 
-      {/* Values Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Core Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('leadership.coreValues')}</h2>
             <p className="text-muted-foreground text-lg mb-12">
-              The principles that guide every decision and action at AL-ROTAN
+              {t('leadership.coreValuesDesc')}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  title: "Integrity",
-                  description: "Honesty and transparency in all our dealings",
+                  title: t('leadership.integrity'),
+                  description: t('leadership.integrityDesc'),
                 },
                 {
-                  title: "Excellence",
-                  description: "Commitment to quality and continuous improvement",
+                  title: t('leadership.excellence'),
+                  description: t('leadership.excellenceDesc'),
                 },
                 {
-                  title: "Responsibility",
-                  description: "Dedication to worker welfare and client satisfaction",
+                  title: t('leadership.responsibility'),
+                  description: t('leadership.responsibilityDesc'),
                 },
               ].map((value, index) => (
                 <Card

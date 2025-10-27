@@ -1,30 +1,33 @@
 import { Shield, CheckCircle, FileText, Award } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 const Licenses = () => {
+  const { t } = useTranslation();
+  
   const licenses = [
     {
-      title: "Recruiting License",
+      title: t('licenses.recruitingLicense'),
       number: "RL-1831",
       authority: "Ministry of Expatriates' Welfare and Overseas Employment",
       status: "Active",
       description: "Government-approved recruiting license for overseas employment"
     },
     {
-      title: "Certificate of Incorporation",
+      title: t('licenses.certificateIncorporation'),
       number: "C-153192/2019",
       authority: "Registrar of Joint Stock Companies & Firms",
       date: "July 10, 2019",
       description: "Incorporated under the Companies Act (Act XVIII) of 1994"
     },
     {
-      title: "BAIRA Membership",
+      title: t('licenses.bairaMembers'),
       authority: "Bangladesh Association of International Recruiting Agencies",
       status: "Active Member",
       description: "Certified member of the national recruiting agencies association"
     },
     {
-      title: "Trade License",
+      title: t('licenses.tradeLicense'),
       authority: "Dhaka City Corporation",
       status: "Renewed",
       description: "Valid trade license for recruitment operations"
@@ -32,12 +35,12 @@ const Licenses = () => {
   ];
 
   const accreditations = [
-    "ISO 9001:2015 Certified Quality Management",
-    "Government Approved Recruiting Agency",
-    "Member of BAIRA (Bangladesh Association of International Recruiting Agencies)",
-    "Certified by Ministry of Expatriates' Welfare",
-    "Registered with Bangladesh Embassy Abroad",
-    "Compliance with International Labour Standards"
+    t('licenses.accreditation1'),
+    t('licenses.accreditation2'),
+    t('licenses.accreditation3'),
+    t('licenses.accreditation4'),
+    t('licenses.accreditation5'),
+    t('licenses.accreditation6'),
   ];
 
   return (
@@ -46,9 +49,9 @@ const Licenses = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <Shield className="w-16 h-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">Licenses & Certifications</h1>
+            <h1 className="text-5xl font-bold mb-6">{t('licenses.title')}</h1>
             <p className="text-xl text-white/90">
-              Fully licensed and certified by the Government of Bangladesh and international bodies
+              {t('licenses.subtitle')}
             </p>
           </div>
         </div>
@@ -58,9 +61,9 @@ const Licenses = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Official Licenses</h2>
+              <h2 className="text-3xl font-bold mb-4">{t('licenses.officialLicenses')}</h2>
               <p className="text-lg text-muted-foreground">
-                Our credentials demonstrate our commitment to legal and ethical recruitment practices
+                {t('licenses.licenseDesc')}
               </p>
             </div>
 
@@ -99,9 +102,9 @@ const Licenses = () => {
             <Card className="bg-gradient-primary text-white">
               <CardHeader>
                 <Award className="w-12 h-12 mb-4" />
-                <CardTitle className="text-2xl">Accreditations & Compliance</CardTitle>
+                <CardTitle className="text-2xl">{t('licenses.accreditationsCompliance')}</CardTitle>
                 <CardDescription className="text-white/80">
-                  We maintain the highest standards of compliance and quality
+                  {t('licenses.complianceDesc')}
                 </CardDescription>
               </CardHeader>
               <CardContent>

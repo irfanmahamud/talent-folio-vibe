@@ -3,45 +3,48 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Users, Globe, Shield, TrendingUp, CheckCircle, Award } from "lucide-react";
 import heroImage from "@/assets/hero-background.jpg";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation();
+  
   const stats = [
-    { value: "10K+", label: "Workers Deployed" },
-    { value: "50+", label: "Countries Served" },
-    { value: "98%", label: "Client Satisfaction" },
-    { value: "15+", label: "Years Experience" },
+    { value: "10K+", label: t('home.workersDeployed') },
+    { value: "50+", label: t('home.countriesServed') },
+    { value: "98%", label: t('home.clientSatisfaction') },
+    { value: "15+", label: t('home.yearsExperience') },
   ];
 
   const services = [
     {
       icon: Users,
-      title: "Skilled Manpower",
-      description: "Expert workers in construction, manufacturing, healthcare, and more",
+      title: t('home.skilledManpower'),
+      description: t('home.skilledManpowerDesc'),
     },
     {
       icon: Globe,
-      title: "Global Reach",
-      description: "Connecting talent with opportunities across Middle East, Gulf, and Southeast Asia",
+      title: t('home.globalReach'),
+      description: t('home.globalReachDesc'),
     },
     {
       icon: Shield,
-      title: "Ethical Recruitment",
-      description: "Transparent, government-approved processes ensuring worker welfare",
+      title: t('home.ethicalRecruitment'),
+      description: t('home.ethicalRecruitmentDesc'),
     },
     {
       icon: TrendingUp,
-      title: "Career Growth",
-      description: "Training and development opportunities for continuous improvement",
+      title: t('home.careerGrowth'),
+      description: t('home.careerGrowthDesc'),
     },
   ];
 
   const features = [
-    "Government Approved (RL-1831)",
-    "Transparent Process",
-    "Post-Deployment Support",
-    "Pre-Departure Training",
-    "Legal Documentation",
-    "24/7 Assistance",
+    t('home.governmentApproved'),
+    t('home.transparentProcess'),
+    t('home.postDeploymentSupport'),
+    t('home.preDepartureTraining'),
+    t('home.legalDocumentation'),
+    t('home.assistance24_7'),
   ];
 
   return (
@@ -56,20 +59,19 @@ const Home = () => {
         <div className="container mx-auto px-4 text-center text-white">
           <div className="animate-fade-in">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              Building Global Careers,
+              {t('home.buildingCareers')}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
-                Connecting Nations
+                {t('home.connectingNations')}
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
-              AL-ROTAN - Your trusted partner in international manpower recruitment. Licensed by the Government of
-              Bangladesh (RL-1831)
+              {t('home.heroDescription')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" asChild className="text-lg px-8 py-6 shadow-strong">
                 <Link to="/contact">
-                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                  {t('header.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button
@@ -78,7 +80,7 @@ const Home = () => {
                 asChild
                 className="text-lg px-8 py-6 bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 text-white"
               >
-                <Link to="/services">Learn More</Link>
+                <Link to="/services">{t('home.learnMore')}</Link>
               </Button>
             </div>
           </div>
@@ -103,9 +105,9 @@ const Home = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home.ourServices')}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Comprehensive recruitment solutions tailored to meet your manpower needs
+              {t('home.servicesDescription')}
             </p>
           </div>
 
@@ -136,14 +138,13 @@ const Home = () => {
             <div className="animate-slide-in-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
                 <Award className="h-5 w-5 text-primary" />
-                <span className="text-sm font-medium text-primary">Government Approved Agency</span>
+                <span className="text-sm font-medium text-primary">{t('home.governmentApprovedAgency')}</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Why Choose AL-ROTAN?
+                {t('home.whyChoose')}
               </h2>
               <p className="text-muted-foreground text-lg mb-8">
-                With over 15 years of experience and a proven track record, we are committed to excellence,
-                transparency, and the welfare of every worker we deploy.
+                {t('home.whyChooseDesc')}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {features.map((feature, index) => (
@@ -155,7 +156,7 @@ const Home = () => {
               </div>
               <Button size="lg" asChild className="shadow-medium">
                 <Link to="/about">
-                  Learn More About Us <ArrowRight className="ml-2 h-5 w-5" />
+                  {t('home.learnMoreAbout')} <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
@@ -164,29 +165,27 @@ const Home = () => {
               <Card className="p-8 bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
                 <CardContent className="space-y-6 p-0">
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-bold">Our Commitment</h3>
+                    <h3 className="text-2xl font-bold">{t('home.ourCommitment')}</h3>
                     <p className="text-muted-foreground">
-                      We believe that every Bangladeshi worker possesses immense potential. Through proper guidance,
-                      training, and ethical recruitment practices, they can become valuable assets to any organization
-                      around the world.
+                      {t('home.commitmentDesc')}
                     </p>
                     <div className="space-y-3 pt-4">
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                         <p className="text-sm">
-                          <strong>Professionalism:</strong> Maintaining highest standards in all interactions
+                          <strong>{t('home.professionalism')}:</strong> {t('home.professionalismDesc')}
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
                         <p className="text-sm">
-                          <strong>Transparency:</strong> Clear communication throughout the recruitment process
+                          <strong>{t('home.transparency')}:</strong> {t('home.transparencyDesc')}
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-secondary mt-2 flex-shrink-0" />
                         <p className="text-sm">
-                          <strong>Fairness:</strong> Ethical practices ensuring dignity and welfare
+                          <strong>{t('home.fairness')}:</strong> {t('home.fairnessDesc')}
                         </p>
                       </div>
                     </div>
@@ -201,13 +200,13 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Global Career?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('home.readyToStart')}</h2>
           <p className="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
-            Join thousands of Bangladeshi workers who have found success through AL-ROTAN
+            {t('home.readyToStartDesc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild className="text-lg px-8 py-6 shadow-strong">
-              <Link to="/contact">Contact Us Today</Link>
+              <Link to="/contact">{t('home.contactUsToday')}</Link>
             </Button>
             <Button
               size="lg"
@@ -215,7 +214,7 @@ const Home = () => {
               asChild
               className="text-lg px-8 py-6 bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 text-white"
             >
-              <Link to="/success-stories">View Success Stories</Link>
+              <Link to="/success-stories">{t('home.viewSuccessStories')}</Link>
             </Button>
           </div>
         </div>
