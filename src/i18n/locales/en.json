@@ -183,9 +183,12 @@
     "reason4": "Get support for deployed workers",
     "reason5": "General inquiries about our services",
     "licenseInfo": "Government-approved recruiting agency by the Ministry of Expatriates' Welfare and Overseas Employment, Bangladesh",
-    "visitOffice": "Visit Our Office",
-    "visitOfficeDesc": "We welcome you to visit our office in Banani, Dhaka during working hours",
-    "messageSent": "Message sent successfully! We'll get back to you soon."
+    "visitOffice": "Visit Our Offices",
+    "visitOfficeDesc": "We welcome you to visit our offices during working hours",
+    "messageSent": "Message sent successfully! We'll get back to you soon.",
+    "bangladeshOffice": "Bangladesh Office",
+    "iraqOffice": "Iraq Office",
+    "ourLocations": "Our Office Locations"
   },
   "gallery": {
     "title": "Media Gallery",

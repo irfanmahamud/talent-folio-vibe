@@ -39,12 +39,22 @@ const Contact = () => {
     }));
   };
 
-  const contactInfo = [
+  const offices = [
     {
-      icon: MapPin,
-      title: t('contact.officeAddress'),
-      details: [t('footer.address')],
+      name: t('contact.bangladeshOffice'),
+      address: "House #6, Road #02, Block #L, Banani, Dhaka-1213, Bangladesh",
+      phone: ["+8801714-465613", "+8801725-294060"],
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.9371429426!2d90.40255!3d23.7937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDQ3JzM3LjMiTiA5MMKwMjQnMDkuMiJF!5e0!3m2!1sen!2sbd!4v1234567890",
     },
+    {
+      name: t('contact.iraqOffice'),
+      address: "M-611, SH-11, D-135, DOUDIYA, AL-MONSUR, BAGHDAD, IRAQ",
+      phone: ["+964 782 714 1813"],
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3335.876!2d44.3661!3d33.3152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDE4JzU0LjciTiA0NMKwMjEnNTguMCJF!5e0!3m2!1sen!2siq!4v1234567890",
+    },
+  ];
+
+  const contactInfo = [
     {
       icon: Phone,
       title: t('contact.phoneNumbers'),
@@ -87,7 +97,7 @@ const Contact = () => {
       {/* Contact Info Cards */}
       <section className="py-12 -mt-8">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
@@ -250,22 +260,52 @@ const Contact = () => {
       {/* Map Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">{t('contact.visitOffice')}</h2>
               <p className="text-muted-foreground">
                 {t('contact.visitOfficeDesc')}
               </p>
             </div>
-            <Card className="overflow-hidden">
-              <div className="aspect-video bg-muted flex items-center justify-center">
-                <div className="text-center p-8">
-                  <MapPin className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-lg font-semibold mb-2">{t('footer.address').split(',')[0]}</p>
-                  <p className="text-muted-foreground">{t('footer.address').split(',').slice(1).join(',')}</p>
-                </div>
-              </div>
-            </Card>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {offices.map((office, index) => (
+                <Card key={index} className="overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="bg-gradient-primary text-white p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <MapPin className="h-6 w-6" />
+                        <h3 className="text-xl font-bold">{office.name}</h3>
+                      </div>
+                      <p className="text-gray-100 mb-3">{office.address}</p>
+                      <div className="flex flex-col gap-1">
+                        {office.phone.map((phoneNum, idx) => (
+                          <a 
+                            key={idx}
+                            href={`tel:${phoneNum}`}
+                            className="text-gray-100 hover:text-white transition-colors flex items-center gap-2"
+                          >
+                            <Phone className="h-4 w-4" />
+                            {phoneNum}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="aspect-video">
+                      <iframe
+                        src={office.mapUrl}
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title={office.name}
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
