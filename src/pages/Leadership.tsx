@@ -3,6 +3,7 @@ import { Quote } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import chairmanPhoto from "@/assets/chairman-photo.png";
 import managingDirectorPhoto from "@/assets/managing-director-photo.jpg";
+import overseasDirectorPhoto from "@/assets/employee/overseas-director-photo.jpeg";
 
 const Leadership = () => {
   const { t } = useTranslation();
@@ -62,11 +63,17 @@ const Leadership = () => {
                           <img 
                             src={chairmanPhoto} 
                             alt={leader.name}
-                            className="w-32 h-32 rounded-full object-cover shadow-medium border-4 border-primary/10"
+                            className="w-32 h-32 rounded-full object-cover object-[center_20%] shadow-medium border-4 border-primary/10"
                           />
                         ) : index === 1 ? (
                           <img 
                             src={managingDirectorPhoto} 
+                            alt={leader.name}
+                            className="w-32 h-32 rounded-full object-cover object-[center_20%] shadow-medium border-4 border-primary/10"
+                          />
+                        ) : index === 2 ? (
+                          <img 
+                            src={overseasDirectorPhoto} 
                             alt={leader.name}
                             className="w-32 h-32 rounded-full object-cover object-[center_20%] shadow-medium border-4 border-primary/10"
                           />
