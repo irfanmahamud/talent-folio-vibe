@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo-al-rotan.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const { t } = useTranslation();
+  const { language, toggleLanguage } = useLanguage();
 
   const navLinks = [
     { to: "/about", label: t("header.about") },
@@ -58,8 +60,14 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="default" size="lg" asChild className="shadow-medium">
-              <Link to="/contact">{t("header.getStarted")}</Link>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              onClick={toggleLanguage}
+              className="shadow-medium"
+            >
+              <Languages className="h-5 w-5 mr-2" />
+              {language === 'en' ? 'العربية' : 'English'}
             </Button>
           </div>
 
@@ -90,10 +98,17 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <Button variant="default" size="lg" asChild className="w-full mt-4">
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                {t("header.getStarted")}
-              </Link>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              onClick={() => {
+                toggleLanguage();
+                setIsMenuOpen(false);
+              }}
+              className="w-full mt-4"
+            >
+              <Languages className="h-5 w-5 mr-2" />
+              {language === 'en' ? 'العربية' : 'English'}
             </Button>
           </nav>
         </div>
