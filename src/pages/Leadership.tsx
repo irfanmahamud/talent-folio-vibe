@@ -68,7 +68,7 @@ const Leadership = () => {
                           <img 
                             src={managingDirectorPhoto} 
                             alt={leader.name}
-                            className="w-32 h-32 rounded-full object-cover shadow-medium border-4 border-primary/10"
+                            className="w-32 h-32 rounded-full object-cover object-[center_20%] shadow-medium border-4 border-primary/10"
                           />
                         ) : (
                           <div className="w-32 h-32 rounded-full bg-gradient-primary flex items-center justify-center text-white text-3xl font-bold shadow-medium">
