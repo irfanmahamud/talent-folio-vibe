@@ -4,10 +4,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Users, Globe, Shield, TrendingUp, CheckCircle, Award } from "lucide-react";
 import heroImage from "@/assets/hero-background-3.png";
 import { useTranslation } from "react-i18next";
+import ReactCountryFlag from "react-country-flag";
+import ScrollingCountries from "../components/home/ScrollingCountries";
+import GallerySection from "@/components/home/GallerySection";
+import StatCounter from "@/components/StatCounter";
 
 const Home = () => {
   const { t } = useTranslation();
-  
+
   const stats = [
     { value: "10K+", label: t('home.workersDeployed') },
     { value: "50+", label: t('home.countriesServed') },
@@ -92,10 +96,12 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-white/90 text-sm md:text-base">{stat.label}</div>
-              </div>
+              <StatCounter
+                key={index}
+                value={stat.value}
+                label={stat.label}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -111,129 +117,44 @@ const Home = () => {
             </p>
           </div>
         </div>
-        
-        <div className="relative">
-          {/* Scrolling countries container */}
+
+        {/* <div className="relative">
           <div className="flex gap-8 animate-scroll">
-            {/* First set of countries */}
             <div className="flex gap-8 shrink-0">
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇮🇶
+              {[
+                { code: "IQ", name: t("countries.iraq") },
+                { code: "SA", name: t("countries.saudiArabia") },
+                { code: "AE", name: t("countries.uae") },
+                { code: "QA", name: t("countries.qatar") },
+                { code: "OM", name: t("countries.oman") },
+                { code: "MY", name: t("countries.malaysia") },
+                { code: "SG", name: t("countries.singapore") },
+                { code: "JO", name: t("countries.jordan") },
+              ].map((country) => (
+                <div
+                  key={country.code}
+                  className="flex flex-col items-center gap-3 min-w-[120px]"
+                >
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center shadow-medium">
+                    <ReactCountryFlag
+                      countryCode={country.code}
+                      svg
+                      style={{
+                        width: "60px",
+                        height: "60px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  </div>
+                  <span className="font-semibold text-sm">{country.name}</span>
                 </div>
-                <span className="font-semibold text-sm">{t('countries.iraq')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇸🇦
-                </div>
-                <span className="font-semibold text-sm">{t('countries.saudiArabia')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇦🇪
-                </div>
-                <span className="font-semibold text-sm">{t('countries.uae')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇶🇦
-                </div>
-                <span className="font-semibold text-sm">{t('countries.qatar')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇴🇲
-                </div>
-                <span className="font-semibold text-sm">{t('countries.oman')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇲🇾
-                </div>
-                <span className="font-semibold text-sm">{t('countries.malaysia')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇸🇬
-                </div>
-                <span className="font-semibold text-sm">{t('countries.singapore')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇯🇴
-                </div>
-                <span className="font-semibold text-sm">{t('countries.jordan')}</span>
-              </div>
-            </div>
-            
-            {/* Duplicate set for seamless loop */}
-            <div className="flex gap-8 shrink-0">
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇮🇶
-                </div>
-                <span className="font-semibold text-sm">{t('countries.iraq')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇸🇦
-                </div>
-                <span className="font-semibold text-sm">{t('countries.saudiArabia')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇦🇪
-                </div>
-                <span className="font-semibold text-sm">{t('countries.uae')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇶🇦
-                </div>
-                <span className="font-semibold text-sm">{t('countries.qatar')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇴🇲
-                </div>
-                <span className="font-semibold text-sm">{t('countries.oman')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇲🇾
-                </div>
-                <span className="font-semibold text-sm">{t('countries.malaysia')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇸🇬
-                </div>
-                <span className="font-semibold text-sm">{t('countries.singapore')}</span>
-              </div>
-              
-              <div className="flex flex-col items-center gap-3 min-w-[120px]">
-                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
-                  🇯🇴
-                </div>
-                <span className="font-semibold text-sm">{t('countries.jordan')}</span>
-              </div>
+              ))}
             </div>
           </div>
-        </div>
+        </div> */}
+
+        <ScrollingCountries t={t} />
+
       </section>
 
       {/* Services Section */}
@@ -265,6 +186,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
 
       {/* Why Choose Us Section */}
       <section className="py-20">
@@ -331,6 +253,48 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <section className="py-16 bg-background overflow-hidden">
+
+        {/* <div className="relative">
+          <div className="flex gap-8 animate-scroll">
+            <div className="flex gap-8 shrink-0">
+              {[
+                { code: "IQ", name: t("countries.iraq") },
+                { code: "SA", name: t("countries.saudiArabia") },
+                { code: "AE", name: t("countries.uae") },
+                { code: "QA", name: t("countries.qatar") },
+                { code: "OM", name: t("countries.oman") },
+                { code: "MY", name: t("countries.malaysia") },
+                { code: "SG", name: t("countries.singapore") },
+                { code: "JO", name: t("countries.jordan") },
+              ].map((country) => (
+                <div
+                  key={country.code}
+                  className="flex flex-col items-center gap-3 min-w-[120px]"
+                >
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center shadow-medium">
+                    <ReactCountryFlag
+                      countryCode={country.code}
+                      svg
+                      style={{
+                        width: "60px",
+                        height: "60px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  </div>
+                  <span className="font-semibold text-sm">{country.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div> */}
+
+        <GallerySection/>
+
+      </section>
+
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero text-white">

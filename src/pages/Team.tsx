@@ -1,21 +1,34 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users } from "lucide-react";
+import chairmanPhoto from "@/assets/chairman-photo.png";
+import managingDirectorPhoto from "@/assets/managing-director-photo.jpg";
+import overseasDirectorPhoto from "@/assets/employee/overseas-director-photo.jpeg";
+import accountantPhoto from "@/assets/employee/accountant.jpeg";
+import computerOperatorPhoto from "@/assets/employee/computer-operator.jpeg";
+import bmetRepPhoto from "@/assets/employee/bmet-rep.jpeg";
+import dataOperatorPhoto from "@/assets/employee/data-operator.jpeg";
+import officeAssistantPhoto from "@/assets/employee/office-assistant.jpeg";
+import mlssPhoto from "@/assets/employee/mlss.jpeg";
+import directorBusinessDevelopmentPhoto from "@/assets/employee/director-business-dev.jpeg";
+import directorHumanResourcePhoto from "@/assets/employee/director-hr.jpeg";
+import directorMarketingPhoto from "@/assets/employee/director-marketing.jpeg";
+import seniorOfficeAssistantPhoto from "@/assets/employee/senior-office-assistant.png";
 
 const Team = () => {
   const teamMembers = [
-    { name: "KAZI ATIKUR RAHMAN", position: "CHAIRMAN" },
-    { name: "MD KHORSHED ALAM (MOJID)", position: "MANAGING DIRECTOR" },
-    { name: "MD BIKO HOSSAIN", position: "OVERSEAS DIRECTOR" },
-    { name: "MD TITON SIKDER", position: "DIRECTOR (HUMAN RESOURCE)" },
-    { name: "MEER M M SHAMEEM", position: "DIRECTOR (MARKETING)" },
-    { name: "MOHAMMED YEASHIN", position: "DIRECTOR (BUSINESS DEVELOPMENT)" },
-    { name: "MD. AL AMIN", position: "ACCOUNTANT" },
-    { name: "MD. IMRAN HOSSAIN", position: "COMPUTER OPERATOR" },
-    { name: "MD MASRUF PARVEZ", position: "SENIOR OFFICE ASSISTANT" },
-    { name: "RASEL AHMMED RAJU", position: "BMET REPRESENTATIVE" },
-    { name: "ASHRAFUL ISLAM", position: "DATA OPERATOR" },
-    { name: "MD SABBIR HASAN", position: "OFFICE ASSISTANT" },
-    { name: "MASUM MIAH", position: "MLSS" },
+    { name: "KAZI ATIKUR RAHMAN", position: "CHAIRMAN", photo: chairmanPhoto },
+    { name: "MD KHORSHED ALAM (MOJID)", position: "MANAGING DIRECTOR", photo: managingDirectorPhoto },
+    { name: "MD BIKO HOSSAIN", position: "OVERSEAS DIRECTOR", photo: overseasDirectorPhoto },
+    { name: "MD TITON SIKDER", position: "DIRECTOR (HUMAN RESOURCE)", photo: directorHumanResourcePhoto },
+    { name: "MEER M M SHAMEEM", position: "DIRECTOR (MARKETING)", photo: directorMarketingPhoto },
+    { name: "MOHAMMED YEASHIN", position: "DIRECTOR (BUSINESS DEVELOPMENT)", photo: directorBusinessDevelopmentPhoto },
+    { name: "MD. AL AMIN", position: "ACCOUNTANT",  photo: accountantPhoto },
+    { name: "MD. IMRAN HOSSAIN", position: "COMPUTER OPERATOR" , photo: computerOperatorPhoto },
+    { name: "MD MASRUF PARVEZ", position: "SENIOR OFFICE ASSISTANT" , photo: seniorOfficeAssistantPhoto },
+    { name: "RASEL AHMMED RAJU", position: "BMET REPRESENTATIVE" , photo: bmetRepPhoto },
+    { name: "ASHRAFUL ISLAM", position: "DATA OPERATOR" , photo: dataOperatorPhoto },
+    { name: "MD SABBIR HASAN", position: "OFFICE ASSISTANT" , photo: officeAssistantPhoto },
+    { name: "MASUM MIAH", position: "MLSS" , photo: mlssPhoto },
   ];
 
   const departments = [
@@ -94,13 +107,19 @@ const Team = () => {
               >
                 <CardContent className="p-6">
                   <div className="flex flex-col items-center text-center">
-                    <div
+                    
+                    {/* <div
                       className={`w-20 h-20 rounded-full ${getColorClass(
                         index
                       )} flex items-center justify-center text-white text-xl font-bold mb-4 shadow-medium group-hover:scale-110 transition-transform`}
                     >
                       {getInitials(member.name)}
-                    </div>
+                    </div> */}
+                    <img 
+                            src={member.photo} 
+                            alt={member.name}
+                            className="w-32 h-32 rounded-full object-cover object-[center_20%] shadow-medium border-4 border-primary/10"
+                          />
                     <h3 className="font-semibold text-base mb-2 leading-tight">{member.name}</h3>
                     <p className="text-sm text-muted-foreground">{member.position}</p>
                   </div>
