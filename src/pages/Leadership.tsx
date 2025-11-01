@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import chairmanPhoto from "@/assets/chairman-photo.png";
 
 const Leadership = () => {
   const { t } = useTranslation();
@@ -56,13 +57,21 @@ const Leadership = () => {
                   <CardContent className="p-8 md:p-12">
                     <div className="flex items-start gap-6 mb-8">
                       <div className="flex-shrink-0">
-                        <div className="w-20 h-20 rounded-full bg-gradient-primary flex items-center justify-center text-white text-2xl font-bold shadow-medium">
-                          {leader.name
-                            .split(" ")
-                            .map((n) => n[0])
-                            .slice(0, 2)
-                            .join("")}
-                        </div>
+                        {index === 0 ? (
+                          <img 
+                            src={chairmanPhoto} 
+                            alt={leader.name}
+                            className="w-32 h-32 rounded-full object-cover shadow-medium border-4 border-primary/10"
+                          />
+                        ) : (
+                          <div className="w-32 h-32 rounded-full bg-gradient-primary flex items-center justify-center text-white text-3xl font-bold shadow-medium">
+                            {leader.name
+                              .split(" ")
+                              .map((n) => n[0])
+                              .slice(0, 2)
+                              .join("")}
+                          </div>
+                        )}
                       </div>
                       <div className="flex-1">
                         <h2 className="text-2xl md:text-3xl font-bold mb-2">{leader.name}</h2>
