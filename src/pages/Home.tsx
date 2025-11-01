@@ -101,6 +101,141 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Countries Section */}
+      <section className="py-16 bg-background overflow-hidden">
+        <div className="container mx-auto px-4 mb-8">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('countries.destinationCountries')}</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {t('countries.subtitle')}
+            </p>
+          </div>
+        </div>
+        
+        <div className="relative">
+          {/* Scrolling countries container */}
+          <div className="flex gap-8 animate-scroll">
+            {/* First set of countries */}
+            <div className="flex gap-8 shrink-0">
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇮🇶
+                </div>
+                <span className="font-semibold text-sm">{t('countries.iraq')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇸🇦
+                </div>
+                <span className="font-semibold text-sm">{t('countries.saudiArabia')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇦🇪
+                </div>
+                <span className="font-semibold text-sm">{t('countries.uae')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇶🇦
+                </div>
+                <span className="font-semibold text-sm">{t('countries.qatar')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇴🇲
+                </div>
+                <span className="font-semibold text-sm">{t('countries.oman')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇲🇾
+                </div>
+                <span className="font-semibold text-sm">{t('countries.malaysia')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇸🇬
+                </div>
+                <span className="font-semibold text-sm">{t('countries.singapore')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇯🇴
+                </div>
+                <span className="font-semibold text-sm">{t('countries.jordan')}</span>
+              </div>
+            </div>
+            
+            {/* Duplicate set for seamless loop */}
+            <div className="flex gap-8 shrink-0">
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇮🇶
+                </div>
+                <span className="font-semibold text-sm">{t('countries.iraq')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇸🇦
+                </div>
+                <span className="font-semibold text-sm">{t('countries.saudiArabia')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇦🇪
+                </div>
+                <span className="font-semibold text-sm">{t('countries.uae')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇶🇦
+                </div>
+                <span className="font-semibold text-sm">{t('countries.qatar')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇴🇲
+                </div>
+                <span className="font-semibold text-sm">{t('countries.oman')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇲🇾
+                </div>
+                <span className="font-semibold text-sm">{t('countries.malaysia')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇸🇬
+                </div>
+                <span className="font-semibold text-sm">{t('countries.singapore')}</span>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 min-w-[120px]">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center bg-gradient-primary shadow-medium text-4xl">
+                  🇯🇴
+                </div>
+                <span className="font-semibold text-sm">{t('countries.jordan')}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
