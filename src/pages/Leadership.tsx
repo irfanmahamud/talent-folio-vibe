@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import chairmanPhoto from "@/assets/chairman-photo.png";
+import managingDirectorPhoto from "@/assets/managing-director-photo.jpg";
 
 const Leadership = () => {
   const { t } = useTranslation();
@@ -60,6 +61,12 @@ const Leadership = () => {
                         {index === 0 ? (
                           <img 
                             src={chairmanPhoto} 
+                            alt={leader.name}
+                            className="w-32 h-32 rounded-full object-cover shadow-medium border-4 border-primary/10"
+                          />
+                        ) : index === 1 ? (
+                          <img 
+                            src={managingDirectorPhoto} 
                             alt={leader.name}
                             className="w-32 h-32 rounded-full object-cover shadow-medium border-4 border-primary/10"
                           />
