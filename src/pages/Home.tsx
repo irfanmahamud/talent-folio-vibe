@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Users, Globe, Shield, TrendingUp, CheckCircle, Award } from "lucide-react";
-import heroImage from "@/assets/hero-background.jpg";
+import heroImage from "@/assets/hero-background-3.png";
 import { useTranslation } from "react-i18next";
 
 const Home = () => {
