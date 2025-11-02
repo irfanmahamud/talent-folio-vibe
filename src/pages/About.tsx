@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Award, MapPin } from "lucide-react";
 import aboutImage from "@/assets/about-image.jpg";
 import { useTranslation } from "react-i18next";
+import PageHero from "@/components/PageHero";
 
 const About = () => {
   const { t } = useTranslation();
@@ -17,17 +18,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('about.title')}</h1>
-            <p className="text-xl text-gray-100">
-              {t('about.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title={t('about.title')}
+        subtitle={t('about.subtitle')}
+        backgroundImage="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1920"
+      />
 
       {/* Company Overview */}
       <section className="py-20">

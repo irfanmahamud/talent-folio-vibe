@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import servicesImage from "@/assets/services-image.jpg";
 import { useTranslation } from "react-i18next";
+import PageHero from "@/components/PageHero";
 
 const Services = () => {
   const { t } = useTranslation();
@@ -83,17 +84,11 @@ const Services = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('services.title')}</h1>
-            <p className="text-xl text-gray-100">
-              {t('services.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title={t('services.title')}
+        subtitle={t('services.subtitle')}
+        backgroundImage="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1920"
+      />
 
       {/* Sectors We Serve */}
       <section className="py-20">

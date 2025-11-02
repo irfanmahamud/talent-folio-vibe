@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Plane, TrendingUp, Award, Globe } from "lucide-react";
+import PageHero from "@/components/PageHero";
 
 const SuccessStories = () => {
   const achievements = [
@@ -51,18 +52,11 @@ const SuccessStories = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <Badge className="mb-6 px-4 py-2 bg-white/20 backdrop-blur hover:bg-white/30">Historic Achievement</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Success Stories</h1>
-            <p className="text-xl text-gray-100">
-              Celebrating milestones in connecting Bangladeshi talent with global opportunities
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title="Success Stories"
+        subtitle="Celebrating milestones in connecting Bangladeshi talent with global opportunities"
+        backgroundImage="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1920"
+      />
 
       {/* Main Success Story */}
       <section className="py-20">

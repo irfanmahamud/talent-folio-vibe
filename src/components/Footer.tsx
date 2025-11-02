@@ -119,10 +119,26 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} {t("footer.copyright")}
-          </p>
+        <div className="border-t border-border mt-8 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground">
+              &copy; {currentYear} {t("footer.copyright")}
+            </p>
+            <div className="flex items-center gap-6">
+              <Link 
+                to="/terms-and-conditions" 
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Terms & Conditions
+              </Link>
+              <Link 
+                to="/privacy-policy" 
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Privacy Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

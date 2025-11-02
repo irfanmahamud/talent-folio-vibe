@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Mail, Phone, MapPin, Globe, Clock, Send } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import PageHero from "@/components/PageHero";
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -82,17 +83,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('contact.title')}</h1>
-            <p className="text-xl text-gray-100">
-              {t('contact.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title={t('contact.title')}
+        subtitle={t('contact.subtitle')}
+        backgroundImage="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=1920"
+      />
 
       {/* Contact Info Cards */}
       <section className="py-12 -mt-8">

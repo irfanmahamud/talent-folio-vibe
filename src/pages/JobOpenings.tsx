@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import PageHero from "@/components/PageHero";
 
 const JobOpenings = () => {
   const { t } = useTranslation();
@@ -78,17 +79,11 @@ const JobOpenings = () => {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
-      <section className="relative py-20 bg-gradient-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in">
-            <Briefcase className="w-16 h-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">{t('jobs.title')}</h1>
-            <p className="text-xl text-white/90">
-              {t('jobs.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title={t('jobs.title')}
+        subtitle={t('jobs.subtitle')}
+        backgroundImage="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1920"
+      />
 
       <section className="py-16">
         <div className="container mx-auto px-4">

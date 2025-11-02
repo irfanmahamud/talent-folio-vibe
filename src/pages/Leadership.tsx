@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import PageHero from "@/components/PageHero";
 import chairmanPhoto from "@/assets/chairman-photo.png";
 import managingDirectorPhoto from "@/assets/managing-director-photo.jpg";
 import overseasDirectorPhoto from "@/assets/employee/overseas-director-photo.jpeg";
@@ -34,16 +35,11 @@ const Leadership = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="py-20 bg-gradient-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('leadership.title')}</h1>
-            <p className="text-xl text-gray-100">
-              {t('leadership.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title={t('leadership.title')}
+        subtitle={t('leadership.subtitle')}
+        backgroundImage="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1920"
+      />
 
       <section className="py-20">
         <div className="container mx-auto px-4">

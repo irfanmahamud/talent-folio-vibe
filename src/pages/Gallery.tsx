@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { X } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import PageHero from "@/components/PageHero";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -106,20 +107,11 @@ const Gallery = () => {
       </Helmet>
 
       <div className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-primary overflow-hidden">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl mx-auto text-center animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-                {t('gallery.title')}
-              </h1>
-              <p className="text-lg text-primary-foreground/90">
-                {t('gallery.subtitle')}
-              </p>
-            </div>
-          </div>
-        </section>
+        <PageHero 
+          title={t('gallery.title')}
+          subtitle={t('gallery.subtitle')}
+          backgroundImage="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1920"
+        />
 
         {/* Gallery Grid */}
         <section className="py-16">

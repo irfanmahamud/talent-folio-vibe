@@ -1,6 +1,7 @@
 import { Shield, CheckCircle, FileText, Award } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import PageHero from "@/components/PageHero";
 
 const Licenses = () => {
   const { t } = useTranslation();
@@ -45,17 +46,11 @@ const Licenses = () => {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
-      <section className="relative py-20 bg-gradient-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in">
-            <Shield className="w-16 h-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">{t('licenses.title')}</h1>
-            <p className="text-xl text-white/90">
-              {t('licenses.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title={t('licenses.title')}
+        subtitle={t('licenses.subtitle')}
+        backgroundImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1920"
+      />
 
       <section className="py-16">
         <div className="container mx-auto px-4">

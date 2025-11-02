@@ -1,6 +1,7 @@
 import { Globe, MapPin, TrendingUp, Users } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import PageHero from "@/components/PageHero";
 
 const Countries = () => {
   const { t } = useTranslation();
@@ -89,17 +90,11 @@ const Countries = () => {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
-      <section className="relative py-20 bg-gradient-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center animate-fade-in">
-            <Globe className="w-16 h-16 mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">{t('countries.title')}</h1>
-            <p className="text-xl text-white/90">
-              {t('countries.subtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title={t('countries.title')}
+        subtitle={t('countries.subtitle')}
+        backgroundImage="https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1920"
+      />
 
       <section className="py-16">
         <div className="container mx-auto px-4">

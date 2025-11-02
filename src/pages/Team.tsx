@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users } from "lucide-react";
+import PageHero from "@/components/PageHero";
 import chairmanPhoto from "@/assets/chairman-photo.png";
 import managingDirectorPhoto from "@/assets/managing-director-photo.jpg";
 import overseasDirectorPhoto from "@/assets/employee/overseas-director-photo.jpeg";
@@ -52,21 +53,11 @@ const Team = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur rounded-full mb-6">
-              <Users className="h-5 w-5" />
-              <span className="text-sm font-medium">13 Dedicated Professionals</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Team</h1>
-            <p className="text-xl text-gray-100">
-              Meet the dedicated professionals working tirelessly to connect Bangladeshi talent with global opportunities
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title="Our Team"
+        subtitle="Meet the dedicated professionals working tirelessly to connect Bangladeshi talent with global opportunities"
+        backgroundImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920"
+      />
 
       {/* Department Overview */}
       <section className="py-12 bg-muted/30">
