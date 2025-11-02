@@ -106,6 +106,47 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-background overflow-hidden">
+
+        {/* <div className="relative">
+          <div className="flex gap-8 animate-scroll">
+            <div className="flex gap-8 shrink-0">
+              {[
+                { code: "IQ", name: t("countries.iraq") },
+                { code: "SA", name: t("countries.saudiArabia") },
+                { code: "AE", name: t("countries.uae") },
+                { code: "QA", name: t("countries.qatar") },
+                { code: "OM", name: t("countries.oman") },
+                { code: "MY", name: t("countries.malaysia") },
+                { code: "SG", name: t("countries.singapore") },
+                { code: "JO", name: t("countries.jordan") },
+              ].map((country) => (
+                <div
+                  key={country.code}
+                  className="flex flex-col items-center gap-3 min-w-[120px]"
+                >
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center shadow-medium">
+                    <ReactCountryFlag
+                      countryCode={country.code}
+                      svg
+                      style={{
+                        width: "60px",
+                        height: "60px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  </div>
+                  <span className="font-semibold text-sm">{country.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div> */}
+
+        <GallerySection/>
+
+      </section>
+      
       {/* Countries Section */}
       <ScrollAnimationWrapper animation="fade-in-up" threshold={0.2}>
         <section className="py-16 bg-background overflow-hidden">
@@ -228,48 +269,6 @@ const Home = () => {
           </div>
         </section>
       </ScrollAnimationWrapper>
-
-      <section className="py-16 bg-background overflow-hidden">
-
-        {/* <div className="relative">
-          <div className="flex gap-8 animate-scroll">
-            <div className="flex gap-8 shrink-0">
-              {[
-                { code: "IQ", name: t("countries.iraq") },
-                { code: "SA", name: t("countries.saudiArabia") },
-                { code: "AE", name: t("countries.uae") },
-                { code: "QA", name: t("countries.qatar") },
-                { code: "OM", name: t("countries.oman") },
-                { code: "MY", name: t("countries.malaysia") },
-                { code: "SG", name: t("countries.singapore") },
-                { code: "JO", name: t("countries.jordan") },
-              ].map((country) => (
-                <div
-                  key={country.code}
-                  className="flex flex-col items-center gap-3 min-w-[120px]"
-                >
-                  <div className="w-20 h-20 rounded-full flex items-center justify-center shadow-medium">
-                    <ReactCountryFlag
-                      countryCode={country.code}
-                      svg
-                      style={{
-                        width: "60px",
-                        height: "60px",
-                        borderRadius: "50%",
-                      }}
-                    />
-                  </div>
-                  <span className="font-semibold text-sm">{country.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div> */}
-
-        <GallerySection/>
-
-      </section>
-
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero text-white">
