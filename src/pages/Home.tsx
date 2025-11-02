@@ -2,21 +2,22 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Users, Globe, Shield, TrendingUp, CheckCircle, Award } from "lucide-react";
-import heroImage from "@/assets/hero-background-3.png";
 import { useTranslation } from "react-i18next";
-import ReactCountryFlag from "react-country-flag";
 import ScrollingCountries from "../components/home/ScrollingCountries";
 import GallerySection from "@/components/home/GallerySection";
 import StatCounter from "@/components/StatCounter";
+import HeroSection from "@/components/home/HeroSection";
+import ParticleNetwork from "@/components/home/ParticleNetwork";
+import ServiceCard from "@/components/ServiceCard";
 
 const Home = () => {
   const { t } = useTranslation();
 
   const stats = [
-    { value: "10K+", label: t('home.workersDeployed') },
-    { value: "50+", label: t('home.countriesServed') },
-    { value: "98%", label: t('home.clientSatisfaction') },
-    { value: "15+", label: t('home.yearsExperience') },
+    { value: "10K+", label: t('home.workersDeployed'), icon: "users" as const },
+    { value: "50+", label: t('home.countriesServed'), icon: "globe" as const },
+    { value: "98%", label: t('home.clientSatisfaction'), icon: "award" as const },
+    { value: "15+", label: t('home.yearsExperience'), icon: "calendar" as const },
   ];
 
   const services = [
@@ -24,21 +25,45 @@ const Home = () => {
       icon: Users,
       title: t('home.skilledManpower'),
       description: t('home.skilledManpowerDesc'),
+      benefits: [
+        'Construction & Engineering',
+        'Healthcare & Nursing',
+        'Hospitality & Service',
+        'Manufacturing & Production'
+      ]
     },
     {
       icon: Globe,
       title: t('home.globalReach'),
       description: t('home.globalReachDesc'),
+      benefits: [
+        '50+ Countries Worldwide',
+        'Middle East Expertise',
+        'Asian Market Presence',
+        'European Connections'
+      ]
     },
     {
       icon: Shield,
       title: t('home.ethicalRecruitment'),
       description: t('home.ethicalRecruitmentDesc'),
+      benefits: [
+        'Government Certified',
+        'Fair Contract Terms',
+        'No Hidden Fees',
+        'Legal Compliance'
+      ]
     },
     {
       icon: TrendingUp,
       title: t('home.careerGrowth'),
       description: t('home.careerGrowthDesc'),
+      benefits: [
+        'Skill Development Programs',
+        'Career Path Planning',
+        'Continuous Support',
+        'Promotion Opportunities'
+      ]
     },
   ];
 
@@ -54,46 +79,14 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section
-        className="relative h-[600px] md:h-[700px] flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${heroImage})`,
-        }}
-      >
-        <div className="container mx-auto px-4 text-center text-white">
-          <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-              {t('home.buildingCareers')}
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">
-                {t('home.connectingNations')}
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
-              {t('home.heroDescription')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" asChild className="text-lg px-8 py-6 shadow-strong">
-                <Link to="/contact">
-                  {t('header.getStarted')} <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="text-lg px-8 py-6 bg-white/10 backdrop-blur border-white/20 hover:bg-white/20 text-white"
-              >
-                <Link to="/services">{t('home.learnMore')}</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-primary">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-primary relative overflow-hidden">
+        {/* Background Particle Network */}
+        <ParticleNetwork />
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <StatCounter
@@ -101,6 +94,7 @@ const Home = () => {
                 value={stat.value}
                 label={stat.label}
                 index={index}
+                icon={stat.icon}
               />
             ))}
           </div>
@@ -169,19 +163,14 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card
+              <ServiceCard
                 key={index}
-                className="group hover:shadow-strong transition-all duration-300 hover:-translate-y-1 animate-fade-in border-border"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 rounded-lg bg-gradient-primary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <service.icon className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="font-semibold text-xl mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                benefits={service.benefits}
+                index={index}
+              />
             ))}
           </div>
         </div>
