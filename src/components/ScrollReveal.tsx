@@ -16,15 +16,16 @@ const animationMap = {
 };
 
 const ScrollReveal = ({ children, animation = "fade-in-up", delay = 0, className = "" }: ScrollRevealProps) => {
-  const elementRef = useScrollAnimation({
-    animationClass: animationMap[animation],
+  const { elementRef, isVisible } = useScrollAnimation({
     threshold: 0.1,
   });
+
+  const animationClass = animationMap[animation];
 
   return (
     <div
       ref={elementRef}
-      className={`opacity-0 ${className}`}
+      className={`${isVisible ? animationClass : 'opacity-0'} ${className}`}
       style={{ animationDelay: `${delay}ms` }}
     >
       {children}

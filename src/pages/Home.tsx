@@ -31,10 +31,10 @@ const Home = () => {
       title: t('home.skilledManpower'),
       description: t('home.skilledManpowerDesc'),
       benefits: [
-        'Construction & Engineering',
-        'Healthcare & Nursing',
-        'Hospitality & Service',
-        'Manufacturing & Production'
+        t('home.constructionEngineering'),
+        t('home.healthcareNursing'),
+        t('home.hospitalityService'),
+        t('home.manufacturingProduction')
       ]
     },
     {
@@ -42,10 +42,10 @@ const Home = () => {
       title: t('home.globalReach'),
       description: t('home.globalReachDesc'),
       benefits: [
-        '50+ Countries Worldwide',
-        'Middle East Expertise',
-        'Asian Market Presence',
-        'European Connections'
+        t('home.countriesWorldwide'),
+        t('home.middleEastExpertise'),
+        t('home.asianMarketPresence'),
+        t('home.europeanConnections')
       ]
     },
     {
@@ -53,10 +53,10 @@ const Home = () => {
       title: t('home.ethicalRecruitment'),
       description: t('home.ethicalRecruitmentDesc'),
       benefits: [
-        'Government Certified',
-        'Fair Contract Terms',
-        'No Hidden Fees',
-        'Legal Compliance'
+        t('home.governmentCertified'),
+        t('home.fairContractTerms'),
+        t('home.noHiddenFees'),
+        t('home.legalCompliance')
       ]
     },
     {
@@ -64,10 +64,10 @@ const Home = () => {
       title: t('home.careerGrowth'),
       description: t('home.careerGrowthDesc'),
       benefits: [
-        'Skill Development Programs',
-        'Career Path Planning',
-        'Continuous Support',
-        'Promotion Opportunities'
+        t('home.skillDevelopmentPrograms'),
+        t('home.careerPathPlanning'),
+        t('home.continuousSupport'),
+        t('home.promotionOpportunities')
       ]
     },
   ];
