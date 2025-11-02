@@ -16,10 +16,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img 
-                src={logo} 
-                alt="AL-ROTAN Logo" 
-                className="w-12 h-12 rounded-full shadow-medium"
+              <img
+                src={logo}
+                alt="AL-ROTAN Logo"
+                className="w-[9rem] h-[9rem] rounded-full shadow-medium"
               />
               <div>
                 <div className="font-bold text-lg">AL-ROTAN</div>
@@ -104,9 +104,9 @@ const Footer = () => {
               <li className="mt-4">{t("footer.friToSat")}</li>
               <li className="font-medium text-foreground">{t("footer.closed")}</li>
             </ul>
-            
+
             <div className="mt-6">
-              <Button 
+              <Button
                 onClick={toggleLanguage}
                 variant="outline"
                 size="sm"
