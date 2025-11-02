@@ -35,7 +35,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="AL-ROTAN Logo" 
-              className="w-12 h-12 rounded-full shadow-medium transition-all group-hover:scale-105"
+              className="w-[5rem] h-[5rem] rounded-full shadow-medium transition-all group-hover:scale-105"
             />
             <div className="hidden md:block">
               <div className="font-bold text-xl text-foreground">AL-ROTAN</div>
