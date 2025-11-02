@@ -26,62 +26,62 @@ const ProcessTimeline = () => {
   const processSteps: ProcessStep[] = [
     {
       id: 1,
-      title: t('processTimeline.step1.title'),
-      description: t('processTimeline.step1.description'),
+      title: t('home.processTimeline.step1.title'),
+      description: t('home.processTimeline.step1.description'),
       icon: FileText,
       details: [
-        t('processTimeline.step1.detail1'),
-        t('processTimeline.step1.detail2'),
-        t('processTimeline.step1.detail3'),
-        t('processTimeline.step1.detail4')
+        t('home.processTimeline.step1.detail1'),
+        t('home.processTimeline.step1.detail2'),
+        t('home.processTimeline.step1.detail3'),
+        t('home.processTimeline.step1.detail4')
       ]
     },
     {
       id: 2,
-      title: t('processTimeline.step2.title'),
-      description: t('processTimeline.step2.description'),
+      title: t('home.processTimeline.step2.title'),
+      description: t('home.processTimeline.step2.description'),
       icon: UserCheck,
       details: [
-        t('processTimeline.step2.detail1'),
-        t('processTimeline.step2.detail2'),
-        t('processTimeline.step2.detail3'),
-        t('processTimeline.step2.detail4')
+        t('home.processTimeline.step2.detail1'),
+        t('home.processTimeline.step2.detail2'),
+        t('home.processTimeline.step2.detail3'),
+        t('home.processTimeline.step2.detail4')
       ]
     },
     {
       id: 3,
-      title: t('processTimeline.step3.title'),
-      description: t('processTimeline.step3.description'),
+      title: t('home.processTimeline.step3.title'),
+      description: t('home.processTimeline.step3.description'),
       icon: GraduationCap,
       details: [
-        t('processTimeline.step3.detail1'),
-        t('processTimeline.step3.detail2'),
-        t('processTimeline.step3.detail3'),
-        t('processTimeline.step3.detail4')
+        t('home.processTimeline.step3.detail1'),
+        t('home.processTimeline.step3.detail2'),
+        t('home.processTimeline.step3.detail3'),
+        t('home.processTimeline.step3.detail4')
       ]
     },
     {
       id: 4,
-      title: t('processTimeline.step4.title'),
-      description: t('processTimeline.step4.description'),
+      title: t('home.processTimeline.step4.title'),
+      description: t('home.processTimeline.step4.description'),
       icon: Plane,
       details: [
-        t('processTimeline.step4.detail1'),
-        t('processTimeline.step4.detail2'),
-        t('processTimeline.step4.detail3'),
-        t('processTimeline.step4.detail4')
+        t('home.processTimeline.step4.detail1'),
+        t('home.processTimeline.step4.detail2'),
+        t('home.processTimeline.step4.detail3'),
+        t('home.processTimeline.step4.detail4')
       ]
     },
     {
       id: 5,
-      title: t('processTimeline.step5.title'),
-      description: t('processTimeline.step5.description'),
+      title: t('home.processTimeline.step5.title'),
+      description: t('home.processTimeline.step5.description'),
       icon: Headphones,
       details: [
-        t('processTimeline.step5.detail1'),
-        t('processTimeline.step5.detail2'),
-        t('processTimeline.step5.detail3'),
-        t('processTimeline.step5.detail4')
+        t('home.processTimeline.step5.detail1'),
+        t('home.processTimeline.step5.detail2'),
+        t('home.processTimeline.step5.detail3'),
+        t('home.processTimeline.step5.detail4')
       ]
     }
   ];
@@ -125,13 +125,13 @@ const ProcessTimeline = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
             <CheckCircle2 className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium text-primary">{t('processTimeline.badge')}</span>
+            <span className="text-sm font-medium text-primary">{t('home.processTimeline.badge')}</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t('processTimeline.title')}
+            {t('home.processTimeline.title')}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {t('processTimeline.description')}
+            {t('home.processTimeline.description')}
           </p>
         </div>
 
@@ -287,13 +287,13 @@ const ProcessTimeline = () => {
         {/* CTA at the bottom */}
         <div className="text-center mt-16">
           <p className="text-muted-foreground mb-4">
-            {t('processTimeline.cta.text')}
+            {t('home.processTimeline.cta.text')}
           </p>
           <a
             href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-primary text-white rounded-lg font-semibold hover:shadow-strong transition-all hover:-translate-y-1"
           >
-            {t('processTimeline.cta.button')}
+            {t('home.processTimeline.cta.button')}
             <CheckCircle2 className="h-5 w-5" />
           </a>
         </div>
