@@ -6,7 +6,7 @@ const WhatsAppFloat = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   // Replace with your actual WhatsApp number (with country code, no + or spaces)
-  const phoneNumber = "8801234567890"; // Example: Bangladesh number
+  const phoneNumber = "+8801714465613"; // Example: Bangladesh number
   const message = "Hello! I'm interested in your recruitment services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
