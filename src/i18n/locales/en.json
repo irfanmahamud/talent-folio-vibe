@@ -88,7 +88,62 @@
     "skillDevelopmentPrograms": "Skill Development Programs",
     "careerPathPlanning": "Career Path Planning",
     "continuousSupport": "Continuous Support",
-    "promotionOpportunities": "Promotion Opportunities"
+    "promotionOpportunities": "Promotion Opportunities",
+    "constructionEngineering": "Construction & Engineering",
+    "healthcareNursing": "Healthcare & Nursing",
+    "hospitalityTourism": "Hospitality & Tourism",
+    "agricultureFarming": "Agriculture & Farming",
+    "manufacturingIndustrial": "Manufacturing & Industrial",
+    "domesticHelpers": "Domestic Helpers",
+    "processTimeline": {
+      "badge": "Our Process",
+      "title": "Your Journey With Us",
+      "description": "A transparent, step-by-step process designed for your success",
+      "step1": {
+        "title": "Application & Registration",
+        "description": "Submit your application with required documents",
+        "detail1": "Fill online application form",
+        "detail2": "Submit required documents",
+        "detail3": "Initial screening process",
+        "detail4": "Profile creation in database"
+      },
+      "step2": {
+        "title": "Screening & Interview",
+        "description": "Comprehensive evaluation of skills and eligibility",
+        "detail1": "Document verification",
+        "detail2": "Skills assessment test",
+        "detail3": "Personal interview",
+        "detail4": "Background check"
+      },
+      "step3": {
+        "title": "Training & Preparation",
+        "description": "Pre-departure training and orientation",
+        "detail1": "Job-specific skill training",
+        "detail2": "Language classes (if needed)",
+        "detail3": "Cultural orientation",
+        "detail4": "Safety and compliance training"
+      },
+      "step4": {
+        "title": "Documentation & Visa",
+        "description": "Complete legal documentation and visa processing",
+        "detail1": "Work permit application",
+        "detail2": "Visa processing",
+        "detail3": "Medical examination",
+        "detail4": "Contract signing"
+      },
+      "step5": {
+        "title": "Post-Placement Support",
+        "description": "Continuous support after deployment",
+        "detail1": "Airport pickup assistance",
+        "detail2": "Accommodation support",
+        "detail3": "On-ground orientation",
+        "detail4": "24/7 helpline access"
+      },
+      "cta": {
+        "text": "Ready to start your journey?",
+        "button": "Begin Your Application"
+      }
+    }
   },
   "about": {
     "title": "About AL-ROTAN",
